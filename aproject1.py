@@ -12,14 +12,14 @@ import streamlit as st
 file_path = "climate_change_dataset1.csv"
 
 if not os.path.exists(file_path):
-    st.error(f"❌ Error: File '{file_path}' not found. Please upload the correct dataset.")
+    st.error(f"Error: File '{file_path}' not found. Please upload the correct dataset.")
     st.stop()
 
 df = pd.read_csv(file_path)
-st.success("✅ Data loaded successfully!")
+st.success(" Data loaded successfully!")
 
 # Exploratory Data Analysis (EDA)
-st.title("🌱 Climate Change Forecasting")
+st.title(" Climate Change Forecasting")
 st.write("### Data Overview")
 st.dataframe(df.head())
 
@@ -70,8 +70,8 @@ try:
     # Model Evaluation
     mse = mean_squared_error(test_data, forecast)
     mae = mean_absolute_error(test_data, forecast)
-    st.write(f"📊 Mean Squared Error (MSE): {mse:.4f}")
-    st.write(f"📉 Mean Absolute Error (MAE): {mae:.4f}")
+    st.write(f"Mean Squared Error (MSE): {mse:.4f}")
+    st.write(f"Mean Absolute Error (MAE): {mae:.4f}")
     
     # Climate Change Impact Assessment
     st.write("### Climate Change Impact Assessment")
@@ -85,7 +85,8 @@ try:
     ax.set_ylabel("Difference")
     st.pyplot(fig)
     
-    st.success("🌎 Climate Change Forecasting Project Execution Completed Successfully!")
+    st.success("Climate Change Forecasting Project Execution Completed Successfully!")
 except Exception as e:
     st.error(f"❌ ARIMA model training failed: {e}")
+
     st.stop()
